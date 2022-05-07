@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="BookStore.Client.Views.RemoveFromStockPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BookStore.Client.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             DataContext="{Binding Source={StaticResource Locator}, Path= RemoveFromStock}">
+
+    <Grid Background="Turquoise">
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="283*"/>
+            <RowDefinition Height="167*"/>
+        </Grid.RowDefinitions>
+        <ComboBox HorizontalAlignment="Left" Margin="15,89,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding ProdactTypeCollection}" SelectedItem="{Binding SelectedProdactType}"/>
+        <ListBox Grid.Column="1" HorizontalAlignment="Left" Margin="10,89,0,0" VerticalAlignment="Top" Width="180" ItemsSource="{Binding ShowProdactCollection}" SelectedItem="{Binding SelectedProdact}" Height="110">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <TextBlock Text="{Binding Description}" VerticalAlignment="Center" Foreground="IndianRed"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock HorizontalAlignment="Left" Margin="35,60,0,0" TextWrapping="Wrap" Text="Prodact Type" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="35,60,0,0" TextWrapping="Wrap" Text="Select Spacific Prodact" VerticalAlignment="Top" Width="120"/>
+        <Button Background="MediumPurple" Content="Remove From Collection" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="167" RenderTransformOrigin="0.76,0.7" Grid.Column="2" Height="62" Grid.Row="1" Command="{Binding Removefromstock}"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Height="42" Margin="10,91,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="167" Text="{Binding DeletedActionReturn}"/>
+        <Button Background="MediumPurple" Content="Go Back" HorizontalAlignment="Left"  Grid.Row="1" VerticalAlignment="Bottom"  Height="50" Width="75" Command="{Binding GoBack}"/>
+
+
+    </Grid>
+</UserControl>

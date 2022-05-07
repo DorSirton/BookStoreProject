@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="BookStore.Client.Views.MenegerOptionsPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BookStore.Client.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+   DataContext="{Binding Source={StaticResource Locator}, Path= MenegerOptionPage}">
+    <Grid Background="Turquoise">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Background="MediumPurple" Grid.Row="0" VerticalAlignment="Center" Content="Show My Prodacts" Command="{Binding ShowProdacts}" Height="50" Width="200"/>
+        <Button Background="MediumPurple" Grid.Row="1" VerticalAlignment="Center" Content="Add To My Stock" Command="{Binding AddToStock}" Height="50" Width="200" />
+        <Button Background="MediumPurple" Grid.Row="2" VerticalAlignment="Center" Content="Remove From Stock" Command="{Binding RemoveFromStock}" Height="50" Width="200" />
+        <Button Background="MediumPurple" Grid.Row="3" VerticalAlignment="Center" Content="Create New Sale" Command="{Binding NewSale}" Height="50" Width="200"/>
+        <Button Background="MediumPurple" Grid.Row="4" VerticalAlignment="Center" Content="Finish Exists Sale" Command="{Binding RemoveSale}" Height="50" Width="200"/>
+        <Button Background="MediumPurple" Grid.Row="5" VerticalAlignment="Center" Content="Production of reports" Command="{Binding Reports}" Height="50" Width="200"/>
+        <Button Background="MediumPurple" Grid.Row="6" VerticalAlignment="Center" Content="Exit" Command="{Binding Exit}" Height="50" Width="200"/>
+    </Grid>
+</UserControl>
